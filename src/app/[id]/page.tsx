@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 import { prisma } from '@/libs/prisma';
 
 export async function generateStaticParams() {
@@ -15,14 +17,17 @@ export default async function Post({
     id: string;
   };
 }) {
-  if (!params?.id) return <>Erro</>;
+  if (!params?.id) notFound();
+  const id = parseInt(params?.id);
+  if (!id) notFound();
+
   const post = await prisma.post.findFirst({
     where: {
-      id: parseInt(params?.id),
+      id,
     },
   });
 
-  if (!post) return <>Erro</>;
+  if (!post) notFound();
   return (
     <>
       <h1 className="text-4xl font-black mb-2">{post.title}</h1>
