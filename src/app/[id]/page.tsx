@@ -1,13 +1,4 @@
-import { notFound } from 'next/navigation';
-
 import { prisma } from '@/libs/prisma';
-
-export const post = {
-  title: 'Olho seco 1',
-  description: 'Epidemiologia e classificação',
-  content:
-    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti voluptatibus saepe, fuga distinctio et consectetur numquam. Officiis sint nihil delectus veniam aliquid reiciendis? Expedita aliquid iure nobis libero dignissimos. Beatae!',
-};
 
 export async function generateStaticParams() {
   const posts = await prisma.post.findMany();
@@ -17,24 +8,21 @@ export async function generateStaticParams() {
   }));
 }
 
-async function Post({
+export default async function Post({
   params,
 }: {
-  params: {
+  params?: {
     id: string;
   };
 }) {
-  const id = parseInt(params.id);
-  if (!id) notFound();
-
+  if (!params?.id) return <>Erro</>;
   const post = await prisma.post.findFirst({
     where: {
-      id,
+      id: parseInt(params?.id),
     },
   });
 
-  if (!post) notFound();
-
+  if (!post) return <>Erro</>;
   return (
     <>
       <h1 className="text-4xl font-black mb-2">{post.title}</h1>
@@ -43,5 +31,3 @@ async function Post({
     </>
   );
 }
-
-export default Post;
