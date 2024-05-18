@@ -40,7 +40,6 @@ async function Post({
       <h1 className="text-4xl font-black mb-2">{post.title}</h1>
       <h2 className="opacity-50 text-2xl mb-10">{post.description}</h2>
       <p>{post.content}</p>
-      {params?.id}
     </>
   );
 }
