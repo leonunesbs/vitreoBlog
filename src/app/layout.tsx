@@ -1,8 +1,6 @@
 import '@/styles/globals.css';
 
-import Link from 'next/link';
-
-import { Footer, Header } from '@/components';
+import { Footer, Header, PromoBar } from '@/components';
 
 import type { Metadata } from 'next';
 
@@ -15,11 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <body>
-        <Link href="https://theoffshop.com.br/" target="_blank">
-          <div className="w-full text-center py-1 bg-primary text-primary-content">
-            Clique aqui para comprar instrumentos cirúrgicos.
-          </div>
-        </Link>
+        <PromoBar />
         <Header />
         <div>{children}</div>
         <Footer />
