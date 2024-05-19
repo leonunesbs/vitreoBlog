@@ -14,7 +14,7 @@ export async function CategoriesBar({ currentCategory }: CategoriesBarProps) {
   });
   const baseClass = 'carousel-item link link-hover text-sm';
   return (
-    <div className="carousel w-full gap-4 overflow-x-auto py-2 mb-6">
+    <div className="carousel w-full gap-4 overflow-x-auto py-2">
       {categories.map((category) => (
         <Link
           key={category.id}

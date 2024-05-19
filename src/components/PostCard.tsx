@@ -2,6 +2,8 @@ import { Prisma } from '@prisma/client';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { extractTextFromHTML } from '@/libs/utils';
+
 interface PostCardProps {
   post: Prisma.PostGetPayload<{
     include: {
@@ -25,7 +27,7 @@ export function PostCard({ post }: PostCardProps) {
             <h2 className="text-xl font-bold line-clamp-2">{post.title}</h2>
             <div className="hidden sm:inline-block">
               <p className="line-clamp-3">
-                {post.description} - {post.content}
+                {post.description} - {extractTextFromHTML(post.content)}
               </p>
             </div>
           </Link>

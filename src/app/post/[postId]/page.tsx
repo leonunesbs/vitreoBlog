@@ -37,7 +37,13 @@ export default async function Post({
     <div>
       <h1 className="text-4xl font-black">{post.title}</h1>
       <h2 className="opacity-50 text-2xl mb-8">{post.description}</h2>
-      <p>{post.content}</p>
+      <div className="prose">
+        <div
+          dangerouslySetInnerHTML={{
+            __html: post.content,
+          }}
+        />
+      </div>
     </div>
   );
 }
