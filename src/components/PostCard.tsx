@@ -45,7 +45,7 @@ export function PostCard({ post }: PostCardProps) {
       <div className="flex">
         {post.categories.map(({ id, name }) => (
           <Link key={id} className="badge badge-neutral" href={`/category/${name}`}>
-            {name}
+            {name.toUpperCase()}
           </Link>
         ))}
       </div>
