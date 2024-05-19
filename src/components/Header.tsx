@@ -7,8 +7,8 @@ interface HeaderProps {
 
 export function Header({}: HeaderProps) {
   return (
-    <div className="py-2 px-4 shadow flex justify-center">
-      <Link href={'/'} className="text-4xl text-neutral font-black">
+    <div className="py-2 px-4 shadow dark:shadow-none flex justify-center bg-neutral text-neutral-content">
+      <Link href={'/'} className="text-4xl font-black">
         vítreo<span className="text-accent">.in</span>
       </Link>
     </div>
