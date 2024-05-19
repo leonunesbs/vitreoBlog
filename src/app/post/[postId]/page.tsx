@@ -5,6 +5,8 @@ import { FaDownload } from 'react-icons/fa6';
 
 import { prisma } from '@/libs/prisma';
 
+import type { Metadata } from 'next';
+
 export async function generateStaticParams() {
   const posts = await prisma.post.findMany({
     where: {
@@ -36,13 +38,25 @@ export async function generateMetadata({
       title: true,
       description: true,
       content: true,
+      image: true,
     },
   });
 
   if (!post) notFound();
-  return {
+  const metadata: Metadata = {
     title: post.title,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description as string,
+      countryName: 'Brazil',
+      authors: 'Leonardo Nunes',
+      type: 'article',
+      siteName: 'vítreo.in',
+      images: post.image,
+    },
   };
+  return metadata;
 }
 
 export default async function Post({
