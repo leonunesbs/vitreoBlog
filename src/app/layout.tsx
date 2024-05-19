@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-BR">
       <body>
         <Link href="https://theoffshop.com.br/">
           <div className="w-full text-center py-1 bg-neutral text-neutral-content">
