@@ -9,6 +9,33 @@ export async function generateStaticParams() {
     postId: post.id.toString(),
   }));
 }
+export async function generateMetadata({
+  params,
+}: {
+  params?: {
+    postId: string;
+  };
+}) {
+  if (!params?.postId) notFound();
+  const postId = parseInt(params?.postId);
+  if (!postId) notFound();
+
+  const post = await prisma.post.findFirst({
+    where: {
+      id: postId,
+    },
+    select: {
+      title: true,
+      description: true,
+      content: true,
+    },
+  });
+
+  if (!post) notFound();
+  return {
+    title: post.title,
+  };
+}
 
 export default async function Post({
   params,
