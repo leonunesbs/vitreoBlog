@@ -31,12 +31,12 @@ export function PostCard({ post }: PostCardProps) {
               </p>
             </div>
           </Link>
-          <Link href={`/post/${post.id}`} className="aspect-square">
+          <Link href={`/post/${post.id}`}>
             <Image
-              alt="image"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              alt={post.title}
+              src={post.image || '/'}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="rounded shadow"
+              className="rounded"
               loading="lazy"
               width={130}
               height={130}
