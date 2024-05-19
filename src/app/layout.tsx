@@ -1,5 +1,7 @@
 import '@/styles/globals.css';
 
+import Link from 'next/link';
+
 import { Header } from '@/components';
 
 import type { Metadata } from 'next';
@@ -13,6 +15,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-br">
       <body>
+        <Link href="https://theoffshop.com.br/">
+          <div className="w-full text-center py-1 bg-neutral text-neutral-content">
+            Instrumentos para cirurgia oftalmológia!
+          </div>
+        </Link>
         <Header />
         <div>{children}</div>
       </body>
