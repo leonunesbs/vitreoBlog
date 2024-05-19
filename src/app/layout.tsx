@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Link href="https://theoffshop.com.br/" target="_blank">
           <div className="w-full text-center py-1 bg-primary text-primary-content">
-            Clique aqui e compre instrumentos para cirurgias oftalmológicas!
+            Clique aqui para comprar instrumentos cirúrgicos.
           </div>
         </Link>
         <Header />
