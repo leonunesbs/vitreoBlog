@@ -53,7 +53,13 @@ export async function generateMetadata({
       authors: 'Leonardo Nunes',
       type: 'article',
       siteName: 'vítreo.in',
-      images: post.image,
+      images: [
+        {
+          url: post.image,
+          width: 180,
+          height: 180,
+        },
+      ],
     },
   };
   return metadata;
