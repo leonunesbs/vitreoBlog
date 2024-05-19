@@ -34,10 +34,10 @@ export default async function Post({
 
   if (!post) notFound();
   return (
-    <>
-      <h1 className="text-4xl font-black mb-2">{post.title}</h1>
-      <h2 className="opacity-50 text-2xl mb-10">{post.description}</h2>
+    <div>
+      <h1 className="text-4xl font-black">{post.title}</h1>
+      <h2 className="opacity-50 text-2xl mb-8">{post.description}</h2>
       <p>{post.content}</p>
-    </>
+    </div>
   );
 }
