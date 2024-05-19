@@ -5,3 +5,4 @@ export * from './MainContainer';
 export * from './Footer';
 export * from './PromoBar';
 export * from './Search';
+export * from './ScrollToTop';

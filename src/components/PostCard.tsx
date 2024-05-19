@@ -9,6 +9,13 @@ interface PostCardProps {
     include: {
       categories: true;
     };
+    select: {
+      id: true;
+      title: true;
+      description: true;
+      image: true;
+      createdAt: true;
+    };
   }>;
 }
 
