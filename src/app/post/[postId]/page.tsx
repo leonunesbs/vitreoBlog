@@ -6,7 +6,11 @@ import { FaDownload } from 'react-icons/fa6';
 import { prisma } from '@/libs/prisma';
 
 export async function generateStaticParams() {
-  const posts = await prisma.post.findMany();
+  const posts = await prisma.post.findMany({
+    where: {
+      published: true,
+    },
+  });
 
   return posts.map((post) => ({
     postId: post.id.toString(),
@@ -26,6 +30,7 @@ export async function generateMetadata({
   const post = await prisma.post.findFirst({
     where: {
       id: postId,
+      published: true,
     },
     select: {
       title: true,

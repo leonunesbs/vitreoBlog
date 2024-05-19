@@ -6,6 +6,9 @@ export default async function Feed() {
     include: {
       categories: true,
     },
+    where: {
+      published: true,
+    },
   });
   return (
     <>
