@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <body>
-        <Link href="https://theoffshop.com.br/">
+        <Link href="https://theoffshop.com.br/" target="_blank">
           <div className="w-full text-center py-1 bg-neutral text-neutral-content">
             Instrumentos para cirurgia oftalmológia!
           </div>
