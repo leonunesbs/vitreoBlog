@@ -21,17 +21,12 @@ export default async function Category({
   if (!params?.categoryName) notFound();
   const category = await prisma.category.findFirst({
     where: {
-      name: params.categoryName.toUpperCase(),
+      name: params.categoryName,
     },
     include: {
       posts: {
         include: {
-          categories: {
-            select: {
-              id: true,
-              name: true,
-            },
-          },
+          categories: true,
         },
       },
     },
