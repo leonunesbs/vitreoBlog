@@ -6,7 +6,7 @@ export async function generateStaticParams() {
   const posts = await prisma.post.findMany();
 
   return posts.map((post) => ({
-    id: post.id.toString(),
+    postId: post.id.toString(),
   }));
 }
 
@@ -14,16 +14,21 @@ export default async function Post({
   params,
 }: {
   params?: {
-    id: string;
+    postId: string;
   };
 }) {
-  if (!params?.id) notFound();
-  const id = parseInt(params?.id);
-  if (!id) notFound();
+  if (!params?.postId) notFound();
+  const postId = parseInt(params?.postId);
+  if (!postId) notFound();
 
   const post = await prisma.post.findFirst({
     where: {
-      id,
+      id: postId,
+    },
+    select: {
+      title: true,
+      description: true,
+      content: true,
     },
   });
 
