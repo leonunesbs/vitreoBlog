@@ -4,15 +4,7 @@ import { CategoriesBar, PostCard } from '@/components';
 import { prisma } from '@/libs/prisma';
 
 export async function generateStaticParams() {
-  const categories = await prisma.category.findMany({
-    where: {
-      posts: {
-        every: {
-          published: true,
-        },
-      },
-    },
-  });
+  const categories = await prisma.category.findMany();
 
   return categories.map((category) => ({
     categoryName: category.name,
