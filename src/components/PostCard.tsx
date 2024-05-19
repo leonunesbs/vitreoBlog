@@ -17,7 +17,7 @@ export function PostCard({ post }: PostCardProps) {
         <span className="opacity-50 text-sm">
           {post.createdAt.toLocaleString('pt-br', {
             dateStyle: 'short',
-            timeZone: 'UTC',
+            timeZone: 'America/Sao_Paulo',
           })}
         </span>
         <div className="flex space-x-4">

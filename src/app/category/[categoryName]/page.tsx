@@ -41,7 +41,7 @@ export default async function Category({
   const posts = category.posts;
 
   return (
-    <div>
+    <>
       <CategoriesBar currentCategory={params.categoryName} />
       {posts.map((post) => (
         <div key={post.id}>
@@ -49,6 +49,11 @@ export default async function Category({
           <div className="divider mb-8"></div>
         </div>
       ))}
-    </div>
+      {!posts.length && (
+        <div className="grow text-center py-12">
+          <i>Nenhum resultado encontrado.</i>
+        </div>
+      )}
+    </>
   );
 }

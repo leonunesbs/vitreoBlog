@@ -8,7 +8,7 @@ export default async function Feed() {
     },
   });
   return (
-    <div>
+    <>
       <CategoriesBar />
       {posts.map((post) => (
         <div key={post.id}>
@@ -16,6 +16,6 @@ export default async function Feed() {
           <div className="divider mb-8"></div>
         </div>
       ))}
-    </div>
+    </>
   );
 }
