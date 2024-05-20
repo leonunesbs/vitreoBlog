@@ -12,33 +12,33 @@ export default async function Search({
 }) {
   if (!searchParams?.q) redirect('/');
 
-  // const searchString = searchParams.q;
-  // const criteria = {
-  //   contains: searchString,
-  // };
+  const searchString = searchParams.q;
+  const criteria = {
+    contains: searchString,
+  };
 
   const posts = await prisma.post.findMany({
-    // where: {
-    //   OR: [
-    //     {
-    //       title: criteria,
-    //     },
-    //     {
-    //       description: criteria,
-    //     },
-    //     {
-    //       categories: {
-    //         some: {
-    //           name: criteria,
-    //         },
-    //       },
-    //     },
-    //     {
-    //       content: criteria,
-    //     },
-    //   ],
-    //   published: true,
-    // },
+    where: {
+      OR: [
+        {
+          title: criteria,
+        },
+        {
+          description: criteria,
+        },
+        {
+          categories: {
+            some: {
+              name: criteria,
+            },
+          },
+        },
+        {
+          content: criteria,
+        },
+      ],
+      published: true,
+    },
     include: {
       categories: true,
     },
