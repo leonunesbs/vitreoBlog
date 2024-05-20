@@ -27,7 +27,7 @@ export function Search({}: SearchProps) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <label className="input input-bordered flex items-center gap-2 max-w-xs mx-auto w-full input-sm">
+      <label className="input input-bordered flex items-center gap-2 max-w-xs mx-auto w-full h-10">
         <IoMdSearch className="h-4 w-4" />
         <input type="text" placeholder="Buscar" className="w-full" {...register('searchString')} />
       </label>
