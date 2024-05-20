@@ -43,6 +43,7 @@ export default async function Search({
       categories: true,
     },
   });
+
   return (
     <>
       <CategoriesBar />
