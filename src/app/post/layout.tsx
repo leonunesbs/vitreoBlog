@@ -1,4 +1,4 @@
-import ScrollToTop from '@/components/ScrollToTop';
+import { ScrollToTop } from '@/components';
 
 export default function PageLayout({ children }: { children: React.ReactNode }) {
   return (
