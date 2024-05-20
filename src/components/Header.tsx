@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 
 import { Search } from './Search';
 
@@ -15,7 +15,9 @@ export function Header({}: HeaderProps) {
           vítreo<span className="text-accent">.in</span>
         </Link>
       </span>
-      <Search />
+      <Suspense>
+        <Search />
+      </Suspense>
     </div>
   );
 }
