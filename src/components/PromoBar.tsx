@@ -5,7 +5,7 @@ interface PromoBarProps {
   children?: ReactNode;
 }
 
-export function PromoBar({}: PromoBarProps) {
+export default function PromoBar({}: PromoBarProps) {
   return (
     <Link href="https://theoffshop.com.br/" target="_blank">
       <div className="w-full text-center py-1 bg-primary text-primary-content">

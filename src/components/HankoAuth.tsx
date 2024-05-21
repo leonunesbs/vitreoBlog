@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 const hankoApi = process.env.NEXT_PUBLIC_HANKO_API_URL as string;
 
-export function HankoAuth() {
+export default function HankoAuth() {
   const router = useRouter();
 
   const [hanko, setHanko] = useState<Hanko>();

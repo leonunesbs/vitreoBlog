@@ -13,7 +13,7 @@ type Inputs = {
   searchString: string;
 };
 
-export function Search({}: SearchProps) {
+export default function Search({}: SearchProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { register, handleSubmit, reset } = useForm<Inputs>();

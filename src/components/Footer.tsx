@@ -5,7 +5,7 @@ interface FooterProps {
   children?: ReactNode;
 }
 
-export async function Footer({}: FooterProps) {
+export default async function Footer({}: FooterProps) {
   return (
     <div className="bg-neutral text-neutral-content py-12 px-4 flex flex-col w-full">
       <div className="mx-auto w-full max-w-2xl flex flex-row justify-between gap-12">

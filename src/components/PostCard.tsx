@@ -19,7 +19,7 @@ interface PostCardProps {
   }>;
 }
 
-export function PostCard({ post }: PostCardProps) {
+export default function PostCard({ post }: PostCardProps) {
   return (
     <div className="space-y-4">
       <div>

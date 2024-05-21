@@ -1,9 +1,9 @@
-export * from './CategoriesBar';
-export * from './Footer';
-export * from './HankoAuth';
-export * from './Header';
-export * from './MainContainer';
-export * from './PostCard';
-export * from './PromoBar';
-export * from './ScrollToTop';
-export * from './Search';
+export { default as CategoriesBar } from './CategoriesBar';
+export { default as Footer } from './Footer';
+export { default as HankoAuth } from './HankoAuth';
+export { default as Header } from './Header';
+export { default as MainContainer } from './MainContainer';
+export { default as PostCard } from './PostCard';
+export { default as PromoBar } from './PromoBar';
+export { default as ScrollToTop } from './ScrollToTop';
+export { default as Search } from './Search';

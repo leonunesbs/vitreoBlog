@@ -6,7 +6,7 @@ interface CategoriesBarProps {
   currentCategory?: string;
 }
 
-export async function CategoriesBar({ currentCategory }: CategoriesBarProps) {
+export default async function CategoriesBar({ currentCategory }: CategoriesBarProps) {
   const categories = await prisma.category.findMany({
     orderBy: {
       name: 'asc',

@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { ReactNode, Suspense } from 'react';
 
-import { Search } from './Search';
+import { Search } from '@/components';
 
 interface HeaderProps {
   children?: ReactNode;
 }
 
-export function Header({}: HeaderProps) {
+export default function Header({}: HeaderProps) {
   return (
     <div className="py-2 px-4 shadow dark:shadow-none flex flex-col text-center bg-neutral text-neutral-content gap-2">
       <span>

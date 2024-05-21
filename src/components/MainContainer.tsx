@@ -4,7 +4,7 @@ interface MainContainerProps {
   children: ReactNode;
 }
 
-export function MainContainer({ children }: MainContainerProps) {
+export default function MainContainer({ children }: MainContainerProps) {
   return (
     <>
       <h1>MainContainer</h1>
