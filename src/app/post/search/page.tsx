@@ -1,3 +1,5 @@
+import { prisma } from '@/libs/prisma';
+
 export default async function Search({
   searchParams,
 }: {
@@ -10,34 +12,8 @@ export default async function Search({
   //   contains: searchString,
   // };
 
-  console.log(searchParams?.q);
-
-  // const posts = await prisma.post.findMany({
-  //   where: {
-  //     OR: [
-  //       {
-  //         title: criteria,
-  //       },
-  //       {
-  //         description: criteria,
-  //       },
-  //       {
-  //         categories: {
-  //           some: {
-  //             name: criteria,
-  //           },
-  //         },
-  //       },
-  //       {
-  //         content: criteria,
-  //       },
-  //     ],
-  //     published: true,
-  //   },
-  //   include: {
-  //     categories: true,
-  //   },
-  // });
+  const posts = await prisma.post.findMany({});
+  console.log(posts);
 
   return (
     <>
