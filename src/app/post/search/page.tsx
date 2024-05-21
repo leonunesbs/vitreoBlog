@@ -1,5 +1,3 @@
-import { redirect } from 'next/navigation';
-
 import { CategoriesBar, PostCard } from '@/components';
 import { prisma } from '@/libs/prisma';
 
@@ -10,9 +8,7 @@ export default async function Search({
     q: string;
   };
 }) {
-  if (!searchParams?.q) redirect('/');
-
-  const searchString = searchParams.q;
+  const searchString = searchParams?.q;
   const criteria = {
     contains: searchString,
   };
