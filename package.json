@@ -26,7 +26,7 @@
     ]
   },
   "dependencies": {
-    "@prisma/client": "5.14.0",
+    "@prisma/client": "5.21.1",
     "@teamhanko/hanko-elements": "0.11.0",
     "htmlparser2": "9.1.0",
     "next": "14.2.3",
@@ -59,7 +59,7 @@
     "postcss": "8.4.38",
     "prettier": "3.2.5",
     "prettier-plugin-sort-json": "4.0.0",
-    "prisma": "5.14.0",
+    "prisma": "5.21.1",
     "tailwindcss": "3.4.3",
     "typescript": "5.4.5"
   }
