@@ -29,7 +29,7 @@
     "@prisma/client": "5.14.0",
     "@teamhanko/hanko-elements": "0.11.0",
     "htmlparser2": "9.1.0",
-    "next": "14.2.3",
+    "next": "14.2.35",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-hook-form": "7.51.4",
